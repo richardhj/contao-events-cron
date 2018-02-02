@@ -22,18 +22,18 @@ use Symfony\Component\EventDispatcher\Event;
  */
 class CronEvent extends Event
 {
-	protected $run;
+    protected $run;
 
-	function __construct($run)
-	{
-		$this->run = $run;
-	}
+    public function __construct($run)
+    {
+        $this->run = $run;
+    }
 
-	/**
-	 * @return mixed
-	 */
-	public function getRun()
-	{
-		return $this->run;
-	}
+    /**
+     * @return mixed
+     */
+    public function getRun()
+    {
+        return $this->run;
+    }
 }
