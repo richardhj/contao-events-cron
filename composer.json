@@ -6,8 +6,8 @@
     "event",
     "cron"
   ],
-  "type": "contao-module",
-  "license": "LGPL-3.0+",
+  "type": "contao-bundle",
+  "license": "LGPL-3.0-or-later",
   "authors": [
     {
       "name": "Tristan Lins",
@@ -33,6 +33,7 @@
     }
   },
   "extra": {
+    "contao-manager-plugin": "ContaoCommunityAlliance\\Contao\\Events\\Cron\\ContaoManager\\Plugin",
     "branch-alias": {
       "dev-master": "1.0.x-dev",
       "dev-develop": "1.1.x-dev"
