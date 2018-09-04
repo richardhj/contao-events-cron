@@ -23,7 +23,7 @@ namespace ContaoCommunityAlliance\Contao\Events\Cron;
 /**
  * Class CronEvents
  */
-class CronEvents
+final class CronEvents
 {
     /**
      * The MONTHLY event occurs monthly.

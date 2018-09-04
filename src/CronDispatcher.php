@@ -25,7 +25,7 @@ use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 /**
  * Class CronDispatcher
  */
-class CronDispatcher
+final class CronDispatcher
 {
 
     /**
@@ -45,6 +45,8 @@ class CronDispatcher
 
     /**
      * Dispatch monthly cron
+     *
+     * @return void
      */
     public function monthly()
     {
@@ -53,6 +55,8 @@ class CronDispatcher
 
     /**
      * Dispatch weekly cron
+     *
+     * @return void
      */
     public function weekly()
     {
@@ -61,6 +65,8 @@ class CronDispatcher
 
     /**
      * Dispatch daily cron
+     *
+     * @return void
      */
     public function daily()
     {
@@ -69,6 +75,8 @@ class CronDispatcher
 
     /**
      * Dispatch hourly cron
+     *
+     * @return void
      */
     public function hourly()
     {
@@ -77,6 +85,8 @@ class CronDispatcher
 
     /**
      * Dispatch minutely cron
+     *
+     * @return void
      */
     public function minutely()
     {

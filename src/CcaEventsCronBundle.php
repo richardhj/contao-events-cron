@@ -24,6 +24,6 @@ use Symfony\Component\HttpKernel\Bundle\Bundle;
 /**
  * Class CcaEventsCronBundle
  */
-class CcaEventsCronBundle extends Bundle
+final class CcaEventsCronBundle extends Bundle
 {
 }

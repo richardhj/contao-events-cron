@@ -25,17 +25,29 @@ use Symfony\Component\EventDispatcher\Event;
 /**
  * Class CronEvent
  */
-class CronEvent extends Event
+final class CronEvent extends Event
 {
-    protected $run;
+    /**
+     * The current run, may be 'minutely' or 'hourly' for instance.
+     *
+     * @var string
+     */
+    private $run;
 
+    /**
+     * CronEvent constructor.
+     *
+     * @param $run string The current run.
+     */
     public function __construct($run)
     {
         $this->run = $run;
     }
 
     /**
-     * @return mixed
+     * Get the current run.
+     *
+     * @return string
      */
     public function getRun()
     {

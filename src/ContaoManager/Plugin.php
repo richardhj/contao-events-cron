@@ -29,7 +29,7 @@ use ContaoCommunityAlliance\Contao\Events\Cron\CcaEventsCronBundle;
 /**
  * Class Plugin
  */
-class Plugin implements BundlePluginInterface
+final class Plugin implements BundlePluginInterface
 {
     /**
      * Gets a list of autoload configurations for this bundle.

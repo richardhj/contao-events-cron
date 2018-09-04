@@ -27,7 +27,7 @@ use Symfony\Component\DependencyInjection\Loader\YamlFileLoader;
 /**
  * This is the Bundle extension.
  */
-class CcaEventsCronExtension extends Extension
+final class CcaEventsCronExtension extends Extension
 {
     /**
      * {@inheritDoc}
