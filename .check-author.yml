@@ -1,0 +1,5 @@
+copy-left:
+  "Tristan Lins <tristan.lins@bit3.de>":
+    - CronDispatcher.php
+    - CronEvents.php
+    - Resources/contao/config/config.php

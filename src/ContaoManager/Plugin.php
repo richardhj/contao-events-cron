@@ -32,11 +32,7 @@ use ContaoCommunityAlliance\Contao\Events\Cron\CcaEventsCronBundle;
 final class Plugin implements BundlePluginInterface
 {
     /**
-     * Gets a list of autoload configurations for this bundle.
-     *
-     * @param ParserInterface $parser
-     *
-     * @return ConfigInterface[]
+     * {@inheritdoc}
      */
     public function getBundles(ParserInterface $parser)
     {

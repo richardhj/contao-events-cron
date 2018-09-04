@@ -46,7 +46,8 @@ class PluginTest extends TestCase
                 [
                     ContaoCoreBundle::class
                 ]
-            );
+            )
+            ->setReplace(['events-cron']);
 
         $this->assertArraySubset($plugin->getBundles($parser), [$bundleConfig1]);
     }

@@ -42,7 +42,7 @@
   },
   "autoload-dev": {
     "psr-4": {
-      "ContaoCommunityAlliance\\Contao\\Events\\Cron\\": "tests/Test"
+      "ContaoCommunityAlliance\\Contao\\Events\\Cron\\": "tests/"
     }
   },
   "extra": {

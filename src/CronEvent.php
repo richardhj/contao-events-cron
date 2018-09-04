@@ -37,7 +37,7 @@ final class CronEvent extends Event
     /**
      * CronEvent constructor.
      *
-     * @param $run string The current run.
+     * @param string $run The current run.
      */
     public function __construct($run)
     {

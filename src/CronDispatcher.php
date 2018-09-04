@@ -29,6 +29,8 @@ final class CronDispatcher
 {
 
     /**
+     * The event dispatcher.
+     *
      * @var EventDispatcherInterface
      */
     private $dispatcher;
