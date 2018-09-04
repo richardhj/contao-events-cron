@@ -35,7 +35,7 @@ final class CronEvents
      *
      * @api
      */
-    public const MONTHLY = 'cron.monthly';
+    const MONTHLY = 'cron.monthly';
 
     /**
      * The WEEKLY event occurs weekly.
@@ -47,7 +47,7 @@ final class CronEvents
      *
      * @api
      */
-    public const WEEKLY = 'cron.weekly';
+    const WEEKLY = 'cron.weekly';
 
     /**
      * The DAILY event occurs daily.
@@ -59,7 +59,7 @@ final class CronEvents
      *
      * @api
      */
-    public const DAILY = 'cron.daily';
+    const DAILY = 'cron.daily';
 
     /**
      * The HOURLY event occurs hourly.
@@ -71,7 +71,7 @@ final class CronEvents
      *
      * @api
      */
-    public const HOURLY = 'cron.hourly';
+    const HOURLY = 'cron.hourly';
 
     /**
      * The MINUTELY event occurs minutely.
@@ -83,5 +83,5 @@ final class CronEvents
      *
      * @api
      */
-    public const MINUTELY = 'cron.minutely';
+    const MINUTELY = 'cron.minutely';
 }
