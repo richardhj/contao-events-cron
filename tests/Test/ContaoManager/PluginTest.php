@@ -17,37 +17,37 @@
  * @filesource
  */
 
-namespace ContaoCommunityAlliance\Contao\Events\Cron\ContaoManager;
+namespace ContaoCommunityAlliance\Contao\Events\Cron\Test\ContaoManager;
 
 use Contao\CoreBundle\ContaoCoreBundle;
-use Contao\ManagerPlugin\Bundle\BundlePluginInterface;
 use Contao\ManagerPlugin\Bundle\Config\BundleConfig;
-use Contao\ManagerPlugin\Bundle\Config\ConfigInterface;
 use Contao\ManagerPlugin\Bundle\Parser\ParserInterface;
 use ContaoCommunityAlliance\Contao\Events\Cron\CcaEventsCronBundle;
+use ContaoCommunityAlliance\Contao\Events\Cron\ContaoManager\Plugin;
+use PHPUnit\Framework\TestCase;
 
 /**
- * Class Plugin
+ * Class PluginTest
  */
-class Plugin implements BundlePluginInterface
+class PluginTest extends TestCase
 {
     /**
-     * Gets a list of autoload configurations for this bundle.
+     * Test get bundles.
      *
-     * @param ParserInterface $parser
-     *
-     * @return ConfigInterface[]
+     * @cover Plugin::getBundles
      */
-    public function getBundles(ParserInterface $parser)
+    public function testGetBundles()
     {
-        return [
-            BundleConfig::create(CcaEventsCronBundle::class)
-                ->setLoadAfter(
-                    [
-                        ContaoCoreBundle::class,
-                    ]
-                )
-                ->setReplace(['events-cron']),
-        ];
+        $plugin = new Plugin();
+        $parser = $this->getMockBuilder(ParserInterface::class)->getMock();
+
+        $bundleConfig1 = BundleConfig::create(CcaEventsCronBundle::class)
+            ->setLoadAfter(
+                [
+                    ContaoCoreBundle::class
+                ]
+            );
+
+        $this->assertArraySubset($plugin->getBundles($parser), [$bundleConfig1]);
     }
 }

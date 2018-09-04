@@ -11,34 +11,30 @@
  * This project is provided in good faith and hope to be usable by anyone.
  *
  * @package    contao-community-alliance/events-cron
- * @author     Tristan Lins <tristan.lins@bit3.de>
  * @author     Richard Henkenjohann <richardhenkenjohann@googlemail.com>
  * @copyright  2013-2018 The Contao Community Alliance.
  * @license    https://github.com/contao-community-alliance/events-cron/blob/master/LICENSE LGPL-3.0-or-later
  * @filesource
  */
 
-namespace ContaoCommunityAlliance\Contao\Events\Cron;
+namespace ContaoCommunityAlliance\Contao\Events\Cron\DependencyInjection;
 
-use Symfony\Component\EventDispatcher\Event;
+use Symfony\Component\Config\FileLocator;
+use Symfony\Component\DependencyInjection\ContainerBuilder;
+use Symfony\Component\DependencyInjection\Extension\Extension;
+use Symfony\Component\DependencyInjection\Loader\YamlFileLoader;
 
 /**
- * Class CronEvent
+ * This is the Bundle extension.
  */
-class CronEvent extends Event
+class CcaEventsCronExtension extends Extension
 {
-    protected $run;
-
-    public function __construct($run)
-    {
-        $this->run = $run;
-    }
-
     /**
-     * @return mixed
+     * {@inheritDoc}
      */
-    public function getRun()
+    public function load(array $configs, ContainerBuilder $container)
     {
-        return $this->run;
+        $loader = new YamlFileLoader($container, new FileLocator(__DIR__ . '/../Resources/config'));
+        $loader->load('services.yml');
     }
 }

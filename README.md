@@ -1,29 +1,31 @@
-# Events: Cron
+[![Build Status](https://travis-ci.org/contao-community-alliance/events-cron.svg)](https://travis-ci.org/contao-community-alliance/events-cron)
+[![Latest Version tagged](http://img.shields.io/github/tag/contao-community-alliance/events-cron.svg)](https://github.com/contao-community-alliance/events-cron/tags)
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/contao-community-alliance/events-cron.svg)](https://packagist.org/packages/https://github.com/contao-community-alliance/events-cron/tags)
+[![Installations via composer per month](https://img.shields.io/packagist/dm/contao-community-alliance/events-cron.svg)](https://packagist.org/packages/contao-community-alliance/events-cron)
+
+Events: Cron
+============
 
 Provide the cron hooks as events.
 
 ```php
 $GLOBALS['TL_EVENTS']['cron.monthly'][] = function($event) {
-	// run monthly
+    // run monthly
 };
 
 $GLOBALS['TL_EVENTS']['cron.weekly'][] = function($event) {
-	// run weekly
+    // run weekly
 };
 
 $GLOBALS['TL_EVENTS']['cron.daily'][] = function($event) {
-	// run daily
+    // run daily
 };
 
 $GLOBALS['TL_EVENTS']['cron.hourly'][] = function($event) {
-	// run hourly
+    // run hourly
 };
 
-// only support in Contao 3.0 or newer
 $GLOBALS['TL_EVENTS']['cron.minutely'][] = function($event) {
-	// run minutely
+    // run minutely
 };
 ```
-
-See the [event dispatcher documentation](https://github.com/contao-community-alliance/event-dispatcher#listen-on-events)
-for more examples how to listen on an event.
