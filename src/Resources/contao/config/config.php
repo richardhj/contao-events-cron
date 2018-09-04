@@ -18,11 +18,9 @@
  * @filesource
  */
 
-use ContaoCommunityAlliance\Contao\Events\Cron\CronDispatcher;
 
-
-$GLOBALS['TL_CRON']['monthly'][]  = [CronDispatcher::class, 'monthly'];
-$GLOBALS['TL_CRON']['weekly'][]   = [CronDispatcher::class, 'weekly'];
-$GLOBALS['TL_CRON']['daily'][]    = [CronDispatcher::class, 'daily'];
-$GLOBALS['TL_CRON']['hourly'][]   = [CronDispatcher::class, 'hourly'];
-$GLOBALS['TL_CRON']['minutely'][] = [CronDispatcher::class, 'minutely'];
+$GLOBALS['TL_CRON']['monthly'][]  = ['cca.events_cron.cron_dispatcher', 'monthly'];
+$GLOBALS['TL_CRON']['weekly'][]   = ['cca.events_cron.cron_dispatcher', 'weekly'];
+$GLOBALS['TL_CRON']['daily'][]    = ['cca.events_cron.cron_dispatcher', 'daily'];
+$GLOBALS['TL_CRON']['hourly'][]   = ['cca.events_cron.cron_dispatcher', 'hourly'];
+$GLOBALS['TL_CRON']['minutely'][] = ['cca.events_cron.cron_dispatcher', 'minutely'];

@@ -20,9 +20,6 @@
 
 namespace ContaoCommunityAlliance\Contao\Events\Cron;
 
-use Contao\System;
-use Symfony\Component\DependencyInjection\Exception\ServiceCircularReferenceException;
-use Symfony\Component\DependencyInjection\Exception\ServiceNotFoundException;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 
 /**
@@ -30,79 +27,59 @@ use Symfony\Component\EventDispatcher\EventDispatcherInterface;
  */
 class CronDispatcher
 {
+
+    /**
+     * @var EventDispatcherInterface
+     */
+    private $dispatcher;
+
+    /**
+     * CronDispatcher constructor.
+     *
+     * @param EventDispatcherInterface $dispatcher The event dispatcher.
+     */
+    public function __construct(EventDispatcherInterface $dispatcher)
+    {
+        $this->dispatcher = $dispatcher;
+    }
+
     /**
      * Dispatch monthly cron
-     *
-     * @throws ServiceNotFoundException
-     * @throws ServiceCircularReferenceException
      */
     public function monthly()
     {
-        $eventDispatcher = $this->getEventDispatcher();
-        $eventDispatcher->dispatch(CronEvents::MONTHLY, new CronEvent('monthly'));
+        $this->dispatcher->dispatch(CronEvents::MONTHLY, new CronEvent('monthly'));
     }
 
     /**
      * Dispatch weekly cron
-     *
-     * @throws ServiceNotFoundException
-     * @throws ServiceCircularReferenceException
      */
     public function weekly()
     {
-        $eventDispatcher = $this->getEventDispatcher();
-        $eventDispatcher->dispatch(CronEvents::WEEKLY, new CronEvent('weekly'));
+        $this->dispatcher->dispatch(CronEvents::WEEKLY, new CronEvent('weekly'));
     }
 
     /**
      * Dispatch daily cron
-     *
-     * @throws ServiceNotFoundException
-     * @throws ServiceCircularReferenceException
      */
     public function daily()
     {
-        $eventDispatcher = $this->getEventDispatcher();
-        $eventDispatcher->dispatch(CronEvents::DAILY, new CronEvent('daily'));
+        $this->dispatcher->dispatch(CronEvents::DAILY, new CronEvent('daily'));
     }
 
     /**
      * Dispatch hourly cron
-     *
-     * @throws ServiceNotFoundException
-     * @throws ServiceCircularReferenceException
      */
     public function hourly()
     {
-        $eventDispatcher = $this->getEventDispatcher();
-        $eventDispatcher->dispatch(CronEvents::HOURLY, new CronEvent('hourly'));
+        $this->dispatcher->dispatch(CronEvents::HOURLY, new CronEvent('hourly'));
     }
 
     /**
      * Dispatch minutely cron
-     *
-     * @throws ServiceNotFoundException
-     * @throws ServiceCircularReferenceException
      */
     public function minutely()
     {
-        $eventDispatcher = $this->getEventDispatcher();
-        $eventDispatcher->dispatch(CronEvents::MINUTELY, new CronEvent('minutely'));
-    }
-
-    /**
-     * Return the event dispatcher.
-     *
-     * @return EventDispatcherInterface
-     *
-     * @throws ServiceNotFoundException
-     * @throws ServiceCircularReferenceException
-     */
-    public function getEventDispatcher()
-    {
-        $dispatcher = System::getContainer()->get('event_dispatcher');
-
-        /** @var EventDispatcherInterface $dispatcher */
-        return $dispatcher;
+        $this->dispatcher->dispatch(CronEvents::MINUTELY, new CronEvent('minutely'));
     }
 }
