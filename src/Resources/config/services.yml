@@ -3,5 +3,4 @@ services:
     class: ContaoCommunityAlliance\Contao\Events\Cron\CronDispatcher
     arguments:
       - '@event_dispatcher'
-      - '@cca.translator.contao_translator'
     public: true
